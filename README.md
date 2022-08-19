@@ -5,24 +5,22 @@ classic-modale include a modale, that you can custom.
 ## exemple
 
 ```
-import React from 'react';
-import { render } from "react-dom";
+import React, { useState } from "react";
 import { Modale } from "./lib";
 
-  <div>
-    <Modale backgroundShadow opened={true} text="Hello World !" crossStyle={{backgroundColor: "blue"}}/>
-  </div>
+const App = () => (
+
+  const [modaleOpen, setModaleOpen] = useState(true)
+  {modaleOpen && <Modale backgroundShadow setOpen={modaleOpen} text="Hello World !" crossStyle={{backgroundColor: "blue"}}/>
+  
+);
 ```
 
 ## props
 
 ### setOpen :
-If you want to play with the state without impact transitions,
-you can create a state and pass his function in this prop.
 
-### opened :
-
-Boolean, to display the modale or no.
+Your state to close and open the modale. Your state is modified as "true" or "false".
 
 ### customContent :
 

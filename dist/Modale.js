@@ -3,7 +3,6 @@ import "./modale.css";
 
 const Modale = ({
   backgroundShadow,
-  opened = true,
   setOpen,
   customContent,
   text = "Please give a text or a custom content",
@@ -11,8 +10,8 @@ const Modale = ({
   crossStyle,
   textStyle
 }) => {
-  const [openState, setOpenState] = useState(opened);
-  return openState && opened && /*#__PURE__*/React.createElement("div", {
+  const [openState, setOpenState] = useState(true);
+  return openState && /*#__PURE__*/React.createElement("div", {
     className: "modale-container"
   }, backgroundShadow && /*#__PURE__*/React.createElement("div", {
     className: "background-shadow"
@@ -25,7 +24,8 @@ const Modale = ({
     onClick: () => {
       document.querySelector(".modale-container").classList.add("close-modale");
       setTimeout(() => {
-        setOpen ? setOpen(false) : setOpenState(false);
+        setOpen && setOpen(false);
+        setOpenState(false);
       }, 200);
     }
   }, /*#__PURE__*/React.createElement("svg", {
