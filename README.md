@@ -6,14 +6,17 @@ classic-modale include a modale, that you can custom.
 
 ```
 import React, { useState } from "react";
-import { Modale } from "./lib";
+import { Modale } from "classic-modale";
 
-const App = () => (
-
-  const [modaleOpen, setModaleOpen] = useState(true)
-  {modaleOpen && <Modale backgroundShadow setOpen={modaleOpen} text="Hello World !" crossStyle={{backgroundColor: "blue"}}/>
+const App = () => {
   
-);
+  const [modaleOpen, setModaleOpen] = useState(true)
+  return(
+    <div style={{ width: 640, margin: "15px auto" }}>
+      {modaleOpen && <Modale backgroundShadow setOpen={setModaleOpen} text="Hello World !"/>}
+    </div>
+  )
+};
 ```
 
 ## props
